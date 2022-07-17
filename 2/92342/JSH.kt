@@ -8,11 +8,10 @@ class Solution {
                     if (info[i] < lion[i]) lion_point += 10 - i else apeach_point += 10 - i
                 }
             }
-            if (lion_point > apeach_point) {
-                if (lion_point - apeach_point >= max) {
-                    res = lion.clone()
-                    max = lion_point - apeach_point
-                }
+            
+            if (lion_point - apeach_point > max) {
+                res = lion.clone()
+                max = lion_point - apeach_point
             }
             return
         }
@@ -34,6 +33,6 @@ class Solution {
     companion object {
         var res = intArrayOf(-1)
         lateinit var lion: IntArray
-        var max = -1000
+        var max = 0
     }
 }
