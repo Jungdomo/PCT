@@ -9,7 +9,7 @@ class Solution {
                 }
             }
             
-            if (lion_point - apeach_point > max) {
+            if (lion_point - apeach_point >= max) {
                 res = lion.clone()
                 max = lion_point - apeach_point
             }
