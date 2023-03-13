@@ -1,0 +1,4 @@
+select r.CAR_ID, r.CAR_TYPE, r.DAILY_FEE, r.OPTIONS
+from CAR_RENTAL_COMPANY_CAR as r
+where r.OPTIONS like '%네비게이션%'
+order by r.CAR_ID desc
