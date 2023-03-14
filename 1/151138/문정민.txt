@@ -1,0 +1,8 @@
+select r.HISTORY_ID, r.CAR_ID,
+DATE_FORMAT(r.START_DATE, "%Y-%m-%d") as START_DATE,
+DATE_FORMAT(r.END_DATE, "%Y-%m-%d") as END_DATE,
+if(DATE_ADD(r.START_DATE, INTERVAL 29 DAY) <= r.END_DATE, "장기 대여", "단기 대여")
+as "RENT_TYPE"
+from CAR_RENTAL_COMPANY_RENTAL_HISTORY r
+where r.START_DATE like "2022-09%"
+order by r.HISTORY_ID desc
