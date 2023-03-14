@@ -1,0 +1,13 @@
+select
+b.BOARD_ID,
+b.WRITER_ID,
+b.TITLE,
+b.PRICE,
+CASE
+    WHEN(b.STATUS = "DONE") then "거래완료"
+    when(b.STATUS = "SALE") then "판매중"
+ELSE "예약중"
+END as "STATUS"
+from USED_GOODS_BOARD b
+where b.CREATED_DATE = "2022-10-05"
+order by b.BOARD_ID desc
