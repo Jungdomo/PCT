@@ -1,0 +1,8 @@
+select u.USER_ID, u.NICKNAME,
+CONCAT(u.CITY, " ", u.STREET_ADDRESS1, " ", u.STREET_ADDRESS2) as 전체주소,
+CONCAT(LEFT(u.TLNO, 3), "-", MID(u.TLNO, 4, 4), "-", RIGHT(u.TLNO, 4)) as 전화번호
+from USED_GOODS_BOARD b, USED_GOODS_USER u
+where b.WRITER_ID = u.USER_ID
+group by u.USER_ID
+having count(*) >= 3
+order by u.USER_ID desc
