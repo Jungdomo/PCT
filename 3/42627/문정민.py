@@ -2,13 +2,13 @@ import heapq
 import math
 def solution(jobs):
     cnt, i = 0, 0
-    start, now = 0, 0
+    start, now = -1, 0
     heap = []
 
     while i < len(jobs):
 
         for j in jobs:
-            if start <= j[0] <= now:
+            if start < j[0] <= now:
                 heapq.heappush(heap, [j[1], j[0]])
 
         if heap:
